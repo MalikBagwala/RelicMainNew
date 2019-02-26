@@ -1,0 +1,17 @@
+html,
+body {
+	height: 100%;
+}
+.spaceExtra {
+	margin-top: 500px;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+.background-pattern {
+	flex: 1 0 auto;
+}
+.footer {
+	flex-shrink: 0;
+}
