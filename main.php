@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_email'])) {
   header("Location: index.php");
 }
 $executeQuery = pg_query("SELECT * from smartphone ORDER BY pid");
-$brand = pg_fetch_all(pg_query($conn, "SELECT * FROM brand"));
+$brand = pg_fetch_all(pg_query($conn, "SELECT * FROM brand"), $result_type = PGSQL_ASSOC);
 $prodHandler = array();
 //$search = $_POST['searchBox'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

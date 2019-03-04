@@ -181,7 +181,7 @@ class Cart
   static function removeCart($uid)
   {
     $cid = pg_fetch_assoc((pg_query($GLOBALS['conn'], "SELECT id FROM cart WHERE uid = $uid AND checked = 'N'")))['id'];
-    $totalItems = pg_fetch_all(pg_query($GLOBALS['conn'], "SELECT pid,qty from cartitems where id = $cid"));
+    $totalItems = pg_fetch_all(pg_query($GLOBALS['conn'], "SELECT pid,qty from cartitems where id = $cid"), $result_type = PGSQL_ASSOC);
     foreach ($totalItems as $item) {
       Cart::addQty($item['pid'], $item['qty']);
     }

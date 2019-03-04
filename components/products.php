@@ -1,7 +1,7 @@
 <?php
 require("modules/database.php");
 $productArray = pg_query($conn, "SELECT pid,pname,qty,price FROM smartphone ORDER BY pid");
-$products = pg_fetch_all($productArray);
+$products = pg_fetch_all($productArray, $result_type = PGSQL_ASSOC);
 ?>
 
 <table class="table my-5">

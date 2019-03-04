@@ -39,7 +39,7 @@ $res = pg_query($conn, "SELECT smartphone.pid,pname,cartitems.qty,price
 if (!$res) {
   Cart::makeCart($UserId);
 }
-$resArray = pg_fetch_all($res);
+$resArray = pg_fetch_all($res, $result_type = PGSQL_ASSOC);
 echo ("<pre>");
 //print_r($resArray);
 echo ("</pre>");

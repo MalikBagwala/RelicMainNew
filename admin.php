@@ -2,7 +2,7 @@
 session_start();
 require("modules/database.php");
 require("modules/functions.php");
-$brand = pg_fetch_all(pg_query($conn, "SELECT * FROM brand ORDER BY bnm"));
+$brand = pg_fetch_all(pg_query($conn, "SELECT * FROM brand ORDER BY bnm"), $result_type = PGSQL_ASSOC);
 //print_r($brand);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['insert_prod'])) {
